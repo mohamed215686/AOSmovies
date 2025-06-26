@@ -1,0 +1,45 @@
+.SectionMobile {
+    width: 100%;
+    --tw-bg-opacity: 0.4;
+    height: 4rem; 
+    background-color: #1a1a1a; 
+    display: flex;
+    position: fixed;
+    bottom: 0;
+}
+@media (min-width: 1024px) {
+    .SectionMobile {
+        display: none;
+    }
+}
+.navLinks {
+    display: flex; 
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.navlink {
+  color: #d5c28f;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s;
+}
+.p{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.navlink:hover {
+    justify-content: center;
+    color: #b99a45;
+}
+
+.navlink.active {
+    justify-content: center;
+    color: #b99a45;
+}
+
