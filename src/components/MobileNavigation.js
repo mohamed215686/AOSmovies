@@ -10,9 +10,11 @@ const MobileNavigation = () => {
         mobileNavigation.map((nav,index)=>{
           return(
             <NavLink key={nav.label+'mobileNavigation'}
-            className={({isActive})=>'navlink'}
+            to={nav.href}
+            className={({ isActive }) => `navlink ${isActive ? 'active' : ''}`
+          }
             >
-              <div >
+              <div className='icons'>
                 {nav.icon}
               </div>
               <p className='p'>{nav.label}</p>  

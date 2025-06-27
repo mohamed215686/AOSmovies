@@ -18,19 +18,51 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
+    color: #646464;
 }
 
 .navlink {
-  color: #d5c28f;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  transition: opacity 0.2s;
+    color: #d5c28f;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-left: 0.75rem;    
+    padding-right: 0.75rem;   
+    display: flex;            
+    height: 100%;
+}
+
+
+.navlink {
+   position: relative;
+}
+
+
+.navlink.active::after {
+   content: "";
+   position: absolute;
+   bottom: 8px;
+   left: 50%;
+   transform: translateX(-50%);
+   width: 24px;
+   height: 2px; 
+   background: #b99a45;
+   border-radius: 1px;
+}
+.navlink::after {
+   transition: all 0.3s ease;
+   opacity: 0;
+}
+
+.navlink.active::after {
+   opacity: 1;
 }
 .p{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    font-size: 0.875rem;  
+    line-height: 1.25rem;
 }
 
 .navlink:hover {
@@ -41,5 +73,10 @@
 .navlink.active {
     justify-content: center;
     color: #b99a45;
+
+}
+.icons{
+    font-size: 1.5rem;    
+    line-height: 2rem;
 }
 
