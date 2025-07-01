@@ -44,7 +44,7 @@ const Header = () => {
       <input 
         type='text'
         placeholder='search here...'
-        className='search_bar hidden lg:block'
+        className='search_bar'
         onChange={(e)=>SetSearchInput(e.target.value)}
         value={SearchInput}
       />

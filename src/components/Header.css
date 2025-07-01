@@ -105,5 +105,11 @@
   color: #d5c28f;
   outline: 2px solid transparent;
   outline-offset: 2px;
-  display: flex;
+  display: none;
 }
+@media (min-width: 1024px) {
+  .search_bar {
+    display: block; 
+  }
+}
+
