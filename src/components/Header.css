@@ -95,7 +95,7 @@
   padding: 0 1rem;
   font-size: 1.3rem;
   line-height: 2rem;
-  display: flex;
+  display: none;
 }
 
 .search_bar {
@@ -112,4 +112,8 @@
     display: block; 
   }
 }
-
+@media (min-width: 1024px) {
+  .search_icon {
+    display: block !important; 
+  }
+}

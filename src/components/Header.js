@@ -10,7 +10,10 @@ const Header = () => {
   
   
   useEffect(()=>{
-    navigate('/search?q=' + SearchInput)
+    if(SearchInput){
+      navigate('/search?q=' + SearchInput)
+    }
+    
   },[SearchInput])
   const handleSubmit=(e)=>{
     e.preventDefault()
