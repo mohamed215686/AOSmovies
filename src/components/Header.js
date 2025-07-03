@@ -20,7 +20,7 @@ const Header = () => {
   }
 
   return (
-    <div className='fixed-header'>
+    <header className='fixed-header'>
       <div className='container'>
   
   <div className='left-side'>
@@ -61,7 +61,7 @@ const Header = () => {
     </div>
   </div>
 </div>
-</div>
+</header>
   )
 }
 
