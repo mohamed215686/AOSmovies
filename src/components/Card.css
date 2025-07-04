@@ -1,0 +1,18 @@
+.Slide{
+    width: 100%;
+    max-width: 230px;
+    border-radius: 10px;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.trend{
+    position: absolute;
+    top: 5px;
+}
+.A{
+    padding: 0.25rem 1rem;
+    background: #b99a45;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+}
