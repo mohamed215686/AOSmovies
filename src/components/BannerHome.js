@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { FaAngleRight, FaAngleLeft } from "react-icons/fa6";
+import { FaAngleRight,FaStar, FaAngleLeft } from "react-icons/fa6";
 import './BannerHome.css'; 
 
 const BannerHome = () => {
@@ -34,9 +34,11 @@ const BannerHome = () => {
     return (
         <section className="banner-container">
             <div className="banner-slider">
-                {bannerData.map((data, index) => (
+                {
+                bannerData.map((data, index) => (
+                    
                     <div 
-                        key={index} 
+                        key={index.id+"BannerHome"+index} 
                         className="banner-slide"
                         style={{ transform: `translateX(-${currentImage * 100}%)` }}
                     >
@@ -67,7 +69,9 @@ const BannerHome = () => {
                             </p>
                             
                             <div className="banner-meta">
-                                <p>Rating: {Number(data.vote_average).toFixed(1)}</p>
+                                <div className='banner-meta2'><p>Rating:  {Number(data.vote_average).toFixed(1)} </p>
+                                <FaStar />
+                                </div>
                                 <span>|</span>
                                 <p>Views: {Number(data.popularity).toFixed(0)}</p>
                             </div>

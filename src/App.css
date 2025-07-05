@@ -55,3 +55,6 @@ body {
     transform: rotate(360deg);
   }
 }
+.scrolbar-none::-webkit-scrollbar{
+  display: none;
+}

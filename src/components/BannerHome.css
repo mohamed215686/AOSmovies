@@ -109,6 +109,11 @@
     gap: 1rem;
     color: white;
 }
+.banner-meta2 {
+    display: flex;
+    gap: 0.3rem;
+    align-items: center;
+}
 
 .play-button {
     background: white;
