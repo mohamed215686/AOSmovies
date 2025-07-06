@@ -5,7 +5,7 @@
   height: 4rem; 
   /*background-color: #1a1a1a;*/
   z-index: 40;
-  background-color: rgba(26, 26, 26, 0.9); 
+  background-color: rgba(0, 0, 0, 0.5); 
   backdrop-filter: blur(5px);
   
 }

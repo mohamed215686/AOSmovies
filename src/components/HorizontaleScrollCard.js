@@ -3,7 +3,7 @@ import './HorizontaleScrollCard.css'
 import Card from './Card'
 import { FaAngleRight,FaStar, FaAngleLeft } from "react-icons/fa6";
 
-const HorizontaleScrollCard = ({data=[],heading}) => {
+const HorizontaleScrollCard = ({data=[],heading,trending}) => {
     const containerRef=useRef()
     const handNext=()=>{
         containerRef.current.scrollLeft +=300
@@ -17,11 +17,11 @@ const HorizontaleScrollCard = ({data=[],heading}) => {
         <h2 className='title'>{heading}</h2>
         
         <div className='slide scrolbar-none'>
-            <div ref={containerRef} className='shows scrolbar-none'>
+            <div ref={containerRef} className='shows scrollbar-none '>
                 {
                 data.map((data,index)=>{
                 return(
-                    <Card key={data.id+"heading"+index} data={data} index={index+1} trending={true}/>
+                    <Card key={data.id+"heading"+index} data={data} index={index+1} trending={trending}/>
                 )})}
             </div>
             <div className='btns lg:flex'>
