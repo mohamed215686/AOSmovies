@@ -1,14 +1,15 @@
 import React from 'react'
+import {Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <Footer className='text-center'>
+    <footer className='text-center'>
       <div className='flex items-center justify-center gap-4'>
-        <link to='/'>About</link>
-        <link to='/'>Contact</link>
+        <Link to='/'>About</Link>
+        <Link to='/'>Contact</Link>
       </div>
       <p>Created By who know ? hhhh</p>
-    </Footer>
+    </footer>
   )
 }
 

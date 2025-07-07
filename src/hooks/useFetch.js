@@ -8,11 +8,13 @@ const useFetch = (endpoint) => {
     const fetchData = async() =>{
       try{
         setLoading(true)
+        console.log('Fetching endpoint:', endpoint);
         const response = await axios.get(endpoint)
         setLoading(false)
         setData(response.data.results)
       }catch(error){
-        console.log('error',error)
+        setLoading(false);
+        console.log('Fetch error for endpoint', endpoint, error)
       }
     }
     useEffect(()=>{

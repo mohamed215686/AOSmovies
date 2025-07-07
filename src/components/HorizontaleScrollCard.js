@@ -4,6 +4,7 @@ import Card from './Card'
 import { FaAngleRight,FaStar, FaAngleLeft } from "react-icons/fa6";
 
 const HorizontaleScrollCard = ({data=[],heading,trending}) => {
+    console.log(`HorizontaleScrollCard [${heading}] data length:`, data?.length);
     const containerRef=useRef()
     const handNext=()=>{
         containerRef.current.scrollLeft +=300
@@ -19,7 +20,7 @@ const HorizontaleScrollCard = ({data=[],heading,trending}) => {
         <div className='slide scrolbar-none'>
             <div ref={containerRef} className='shows scrollbar-none '>
                 {
-                data.map((data,index)=>{
+                (data.slice(0, 20)).map((data,index)=>{
                 return(
                     <Card key={data.id+"heading"+index} data={data} index={index+1} trending={trending}/>
                 )})}

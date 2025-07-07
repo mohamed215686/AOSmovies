@@ -29,20 +29,17 @@ function App() {
     }
   };
 
-  useEffect(() => {
-    fetchTrendingData();
-    fetchConfiguration();
-  }, []);
+   useEffect(() => {
+     fetchTrendingData();
+     fetchConfiguration();
+   }, []);
 
   return (
-    <div className="app-container">
-      <Header className="app-header" />
-      <div className="content-container">
-        <Outlet />
-      </div>
-      <Footer className="app-footer" />
-      <MobileNavigation />
-    </div>
+    <>
+      <Header />
+      <Outlet />
+      <Footer />
+    </>
   );
 }
 
