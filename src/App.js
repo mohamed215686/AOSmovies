@@ -35,11 +35,14 @@ function App() {
    }, []);
 
   return (
-    <>
-      <Header />
-      <Outlet />
-      <Footer />
-    </>
+    <div className="app-container">
+      <Header className="app-header" />
+      <div className="content-container">
+        <Outlet />
+      </div>
+      <Footer className="app-footer" />
+      <MobileNavigation />
+    </div>
   );
 }
 
