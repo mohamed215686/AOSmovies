@@ -1,14 +1,14 @@
 import React from 'react'
 import {Link } from 'react-router-dom';
-
+import './Footer.css'
 const Footer = () => {
   return (
-    <footer className='text-center'>
-      <div className='flex items-center justify-center gap-4'>
+    <footer className='footer '>
+      <div className='about-contact  '>
         <Link to='/'>About</Link>
         <Link to='/'>Contact</Link>
       </div>
-      <p>Created By who know ? hhhh</p>
+      <p className='credit '>Created By YAHYA & AFKIR</p>
     </footer>
   )
 }

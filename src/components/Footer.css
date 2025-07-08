@@ -1,0 +1,20 @@
+.footer{
+    color: #d5c28f;
+    text-align: center;
+    background-color: #1a1a1a;
+    --tw-bg-opacity: 0.35;
+    width: 100%;
+    padding-top: 0.5rem /* 8px */;
+    padding-bottom: 0.5rem /* 8px */;
+}
+.about-contact{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem /* 16px */;
+}
+
+.credit{
+    font-size: 0.875rem /* 14px */;
+    line-height: 1.25rem /* 20px */;
+}

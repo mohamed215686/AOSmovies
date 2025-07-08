@@ -1,11 +1,12 @@
 .SectionMobile {
     width: 100%;
-    --tw-bg-opacity: 0.4;
     height: 4rem; 
-    background-color: #1a1a1a; 
+    background-color: rgba(0,0,0, 0.7); 
     display: flex;
     position: fixed;
     bottom: 0;
+    z-index: 40;
+    backdrop-filter: blur(10px);
 }
 @media (min-width: 1024px) {
     .SectionMobile {

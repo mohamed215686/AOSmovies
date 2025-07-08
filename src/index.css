@@ -14,7 +14,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
-  @apply bg-neutral-900 text-neutral-300 
+  @apply bg-neutral-900 text-neutral-300  p-0 m-0
 }
 
 code {
