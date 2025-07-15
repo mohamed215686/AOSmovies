@@ -4,11 +4,13 @@ import { FaStar } from "react-icons/fa";
 import './Card.css'
 import moment from 'moment'
 import { Link } from 'react-router-dom';
-const Card = ({data,trending,index}) => {
+const Card = ({data,trending,index,media_type}) => {
       const imageURL = useSelector(state => state.AOSmoviesData.imageURL);
 
+      const mediaType = data.media_type ?? media_type
+
   return (
-    <Link to={"/"+data.media_type+"/"+data.id} className='Slide '>
+    <Link to={"/"+mediaType+"/"+data.id} className='Slide '>
       <img
       src={imageURL+data?.poster_path}
       />

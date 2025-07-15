@@ -6,6 +6,11 @@
     height: 100%;
     overflow: hidden;
     position: relative;
+    display: block;
+    transition: all;
+}
+.Slide:hover {
+    transform: scale(1.05);
 }
 .trend{
     position: absolute;

@@ -1,0 +1,32 @@
+/* ExplorePage.css */
+
+/* Outer container with padding to push content below the navbar */
+.explore-container {
+  padding-top: 4rem; /* equivalent to pt-16 */
+}
+
+/* Inner container for centering and max-width */
+.explore-inner {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Page heading styles */
+.explore-heading {
+  text-transform: capitalize;
+  font-size: 1.125rem;     /* base size: text-lg */
+  font-weight: 600;        /* font-semibold */
+  margin-top: 0.75rem;     /* my-3 */
+  margin-bottom: 0.75rem;
+  color: #d5c28f;
+}
+
+/* Grid layout for the cards */
+.explore-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 230px);
+  gap: 1rem; /* equivalent to gap-4 */
+}
