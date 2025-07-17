@@ -48,8 +48,8 @@ const ExplorePage = () => {
     <div className="explore-container">
       <div className="explore-inner">
         <h3 className="explore-heading">Popular {params.explore} Show</h3>
-        <div className="explore-grid">
-          {data.map((exploreData) => (
+        <div className="explore-grid l">
+          {data.map((exploreData,index) => (
             <Card data={exploreData} key={exploreData.id + "exploreSEction"} media_type={params.explore} />
           ))}
         </div>

@@ -1,13 +1,11 @@
 .Slide{
-    width: 100%;
-    max-width: 230px;
-    min-width: 230px;
+    width: 100%; /* Fill grid cell */
+    aspect-ratio: 2/3; /* Maintain card aspect ratio (common for movie cards) */
     border-radius: 10px;
-    height: 100%;
     overflow: hidden;
     position: relative;
     display: block;
-    transition: all;
+    transition: transform 0.3s ease;
 }
 .Slide:hover {
     transform: scale(1.05);

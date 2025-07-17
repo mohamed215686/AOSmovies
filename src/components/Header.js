@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import './Header.css'
-import {Link, NavLink, useNavigate } from 'react-router-dom';
+import {Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { FaUserAlt,FaSearch } from "react-icons/fa";
 import { navigation } from '../contants/navigation';
 
 const Header = () => {
-  const [SearchInput,SetSearchInput]=useState('')
+  const location=useLocation()
+  const removespace=location?.search?.slice(3)?.split("%20")?.join(" ")
+  const [SearchInput,SetSearchInput]=useState(removespace)
   const navigate=useNavigate()
   
   
+  console.log("location")
   useEffect(()=>{
     if(SearchInput){
       navigate('/search?q=' + SearchInput)

@@ -11,9 +11,19 @@ const Card = ({data,trending,index,media_type}) => {
 
   return (
     <Link to={"/"+mediaType+"/"+data.id} className='Slide '>
-      <img
+      {
+        data?.poster_path ? (
+          <img
       src={imageURL+data?.poster_path}
       />
+        ):(
+          <div className='bg-neutral-800 h-full w-full flex justify-center items-center'>
+            No image found 
+          </div>
+        )
+        
+      }
+      
       <div className='trend'>
         {
         trending &&(

@@ -1,12 +1,70 @@
-import React from 'react'
-import { useLocation } from 'react-router-dom'
-
+import React, { useEffect, useState } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
+import './SearchPage.css'
+import axios from 'axios'
+import Card from '../components/Card'
 const SearchPage = () => {
   const location =useLocation()
-  console.log("Location",location)
+  const navigate=useNavigate()
+  const [data,setData]=useState([])
+  const [page,setpage]=useState(1)
+
+  const fetchData = async () => {
+      try {
+        const response = await axios.get(`/search/collection`, {
+          params: {
+            query: location?.search?.slice(3),
+            page: page
+          },
+        })
+        setData((preve) => [...preve, ...response.data.results])
+        
+      } catch (error) {
+        console.log("error", error)
+      }
+    }
+  useEffect(()=>{
+    setpage(1)
+    setData([])
+    fetchData()
+  },[location?.search])
+
+  const handleScroll = () => {
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+      setpage((preve) => preve + 1)
+    }
+  }
+
+  useEffect(() => {
+      fetchData()
+    }, [page])
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll)
+      }, [])
+
+
+  console.log("Location",)
   return (
-    <div>
-      SearchPage
+    <div className='Search-container '>
+      <div className='search_form '>
+        <input 
+        type='text'
+        placeholder='Search here...' 
+        onChange={(e)=>navigate(`/search?q=${e.target.value}`)}
+        className='search_barr'
+        />
+      </div>
+
+      <div className='Container'>
+        <h3 className="Search-heading ">Search Results</h3>
+        <div className="search-grid  lg:justify-start">
+          {data.map((searchData,index) => {
+            return(
+            <Card data={searchData} key={searchData.id + "Search"} media_type={searchData.media_type} />
+        )})}
+        </div>
+      </div>
     </div>
   )
 }

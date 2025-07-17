@@ -27,6 +27,31 @@
 /* Grid layout for the cards */
 .explore-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 230px);
-  gap: 1rem; /* equivalent to gap-4 */
+  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+/* Media queries for finer control at specific breakpoints */
+@media (min-width: 240px) {
+  .explore-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+}
+@media (min-width: 640px) {
+  .explore-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+}
+
+@media (min-width: 768px) {
+  .explore-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .explore-grid {
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  }
 }

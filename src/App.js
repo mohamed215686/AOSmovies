@@ -37,7 +37,7 @@ function App() {
   return (
     <div className="app-container">
       <Header className="app-header" />
-      <div className="content-container">
+      <div className="content-container ">
         <Outlet />
       </div>
       <Footer className="app-footer" />
