@@ -1,11 +1,12 @@
 .Slide{
-    width: 100%; /* Fill grid cell */
-    aspect-ratio: 2/3; /* Maintain card aspect ratio (common for movie cards) */
+    width: 100%; 
+    aspect-ratio: 2/3; 
     border-radius: 10px;
+    height: 100%;
     overflow: hidden;
     position: relative;
     display: block;
-    transition: transform 0.3s ease;
+    transition: all;
 }
 .Slide:hover {
     transform: scale(1.05);
@@ -57,4 +58,15 @@
     align-items: center;
     gap: 0.4rem;
     color:#ffcc00;
+}
+@media (max-width: 1024px) {
+    .movie_name{
+        font-size: 1rem /* 18px */;
+        line-height: 1.5rem /* 28px */;
+        font-weight: 700;
+    }
+    .date_and_rate{ 
+    font-size: 0.8rem ;
+    line-height: 1rem ;  
+    }
 }

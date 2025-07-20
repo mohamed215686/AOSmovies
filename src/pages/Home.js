@@ -8,17 +8,10 @@ import useFetch from '../hooks/useFetch'
 
 const Home = () => {
     const trendingData = useSelector(state => state.AOSmoviesData.bannerData);
-    
     const {data : nowPlayingData} = useFetch("/movie/now_playing")
     const {data : topRatedData} = useFetch("/movie/top_rated")
     const {data : popularTvShowsData} = useFetch("/tv/popular")
     const {data : onTheAirShowData} = useFetch("/tv/on_the_air")
-
-    console.log('Home.js trendingData:', trendingData?.length, trendingData);
-    console.log('Home.js nowPlayingData:', nowPlayingData?.length, nowPlayingData);
-    console.log('Home.js topRatedData:', topRatedData?.length, topRatedData);
-    console.log('Home.js popularTvShowsData:', popularTvShowsData?.length, popularTvShowsData);
-    console.log('Home.js onTheAirShowData:', onTheAirShowData?.length, onTheAirShowData);
 
   return (
     

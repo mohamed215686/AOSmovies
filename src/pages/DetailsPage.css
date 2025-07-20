@@ -1,0 +1,116 @@
+.show_image{
+    width: 100%;
+    height: 350px;
+    position: relative;
+    display: none;
+}
+@media (min-width: 1024px) {
+    .show_image{
+        display: block;
+    }
+}
+.imageA{
+    width: 100%;
+    height: 100%;
+}
+.image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.shadow{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    background-image: linear-gradient(to top, var(--tw-gradient-stops));
+    --tw-gradient-from: #171717 var(--tw-gradient-from-position);
+    --tw-gradient-to: rgb(23 23 23 / 0) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.showD{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem /* 16px */;
+    padding-right: 1rem /* 16px */;
+    padding-top: 4rem /* 64px */;
+    padding-bottom: 4rem /* 64px */;
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
+@media (min-width: 1024px) {
+    .showD{
+    padding-top:0;
+    padding-bottom: 0;
+    flex-direction: row;
+    gap:40px;
+    }
+}
+.poster_container{
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    position: relative;
+}
+@media (min-width: 1024px) {
+    .poster_container {
+        margin-top: -7rem /* -112px */;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+.poster{
+    width: 240px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.titleN{
+    font-size: 1.5rem ;
+    line-height: 2rem ;
+    font-weight: 700;
+    color: #b99a45;
+}
+.tagline{
+    color: #d5c28f;
+    opacity: 0.7;
+}
+.movie-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: nowrap; /* Prevent wrapping */
+  min-width: 0; /* Prevent overflow */
+}
+
+.icon {
+  flex-shrink: 0; /* Prevent icons from shrinking */
+}
+
+.star-icon {
+  color: #ffcc00;
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 480px) {
+  .info-item {
+    font-size: 0.9rem; /* Slightly smaller text */
+  }
+  
+  .info-item span:first-child {
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Add ... if text is too long */
+  }
+}

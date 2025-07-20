@@ -39,7 +39,7 @@ const Card = ({data,trending,index,media_type}) => {
             <p>{moment(data?.release_date).format("MMM Do YYYY")}</p>
             <span></span>
             <div className='A'>
-              <p>{Number(data.vote_average).toFixed(1)}</p>
+              <p >{Number(data.vote_average).toFixed(1)}</p>
               <div><FaStar /></div>
             </div>
             

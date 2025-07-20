@@ -51,7 +51,7 @@
     grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   }
 }
-.search_form {
+.search_form1 {
   display: flex;
   justify-content: center;
   z-index: 30;
@@ -59,7 +59,7 @@
   top: 70px;
 }
 @media (min-width: 1024px) {
-    .search_form {
+    .search_form1 {
         display: none;
     }
 }

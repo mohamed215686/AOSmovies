@@ -11,7 +11,7 @@ const SearchPage = () => {
 
   const fetchData = async () => {
       try {
-        const response = await axios.get(`/search/collection`, {
+        const response = await axios.get(`/search/multi`, {
           params: {
             query: location?.search?.slice(3),
             page: page
@@ -29,7 +29,7 @@ const SearchPage = () => {
     fetchData()
   },[location?.search])
 
-  const handleScroll = () => {
+  const HandleScroll = () => {
     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
       setpage((preve) => preve + 1)
     }
@@ -40,14 +40,14 @@ const SearchPage = () => {
     }, [page])
 
     useEffect(() => {
-        window.addEventListener('scroll', handleScroll)
+        window.addEventListener('scroll', HandleScroll)
       }, [])
 
 
   console.log("Location",)
   return (
     <div className='Search-container '>
-      <div className='search_form '>
+      <div className='search_form1 '>
         <input 
         type='text'
         placeholder='Search here...' 

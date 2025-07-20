@@ -41,18 +41,40 @@
 }*/
 .shows {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 230px);
-  grid-auto-flow: column;         
-  gap: 1.5rem;                      
-  overflow-x: scroll;              
+  grid-auto-flow: column; /* Forces items into a single row */
+  grid-auto-columns: 230px; /* Fixed width for each item */
+  gap: 1.5rem;
+  overflow-x: auto; /* Enables horizontal scrolling */
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Hides scrollbar in Firefox */
+  -ms-overflow-style: none; /* Hides scrollbar in IE/Edge */
   position: relative;
   z-index: 10;
-  scroll-behavior: smooth;
-  transition: all 0.3s ease;
-  
- 
-  scrollbar-width: none; 
-  -ms-overflow-style: none; 
+}
+.shows::-webkit-scrollbar {
+  display: none;
+}
+@media (min-width: 240px) {
+  .shows{
+     grid-auto-columns: 140px;
+  }
+}
+@media (min-width: 640px) {
+  .shows{
+    grid-auto-columns: 180px;
+  }
+}
+
+@media (min-width: 768px) {
+  .shows{
+    grid-auto-columns: 200px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .shows {
+    grid-auto-columns: 230px;
+  }
 }
 
 .scrollbar-none::-webkit-scrollbar {
