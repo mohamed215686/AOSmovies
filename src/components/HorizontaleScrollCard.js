@@ -15,7 +15,7 @@ const HorizontaleScrollCard = ({data=[],heading,trending,media_type}) => {
   return (
     <div>
       <div className='Trendingshow '> 
-        <h2 className='title'>{heading}</h2>
+        <h2 className='title capitalize'>{heading}</h2>
         
         <div className='slide scrolbar-none'>
             <div ref={containerRef} className='shows scrollbar-none '>

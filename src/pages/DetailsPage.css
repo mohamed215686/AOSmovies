@@ -159,3 +159,18 @@
 .info{
   color: #ffffff;
 }
+.PlayBtn{
+  background: white;
+    padding: 0.5rem 1rem;
+    color: black;
+    font-weight: 700;
+    border-radius: 0.25rem;
+    margin-top: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    width: 240px;
+}
+.PlayBtn:hover{
+  background: linear-gradient(to left, #b99a45,#d5c28f);
+    transform: scale(1.1);
+}

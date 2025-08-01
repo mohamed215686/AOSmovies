@@ -78,6 +78,7 @@
     left: 0;
     width: 100%;
     padding: 0 2rem 2rem;
+    gap: 1rem;
 }
 
 .banner-title {
@@ -108,6 +109,7 @@
     align-items: center;
     gap: 1rem;
     color: white;
+    margin-bottom: 1rem;
 }
 .banner-meta2 {
     display: flex;
@@ -120,13 +122,16 @@
     padding: 0.5rem 1rem;
     color: black;
     font-weight: 700;
+    display: inline-block;
     border-radius: 0.25rem;
-    margin-top: 1rem;
+    margin-top: 8rem;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease;
+    margin-top: 0; 
 }
 
 .play-button:hover {
     background: linear-gradient(to left, #b99a45,#d5c28f);
     transform: scale(1.05);
+    
 }

@@ -8,7 +8,7 @@ const SearchPage = () => {
   const navigate=useNavigate()
   const [data,setData]=useState([])
   const [page,setpage]=useState(1)
-
+  const query=location?.search?.slice(3)
   const fetchData = async () => {
       try {
         const response = await axios.get(`/search/multi`, {
@@ -24,9 +24,10 @@ const SearchPage = () => {
       }
     }
   useEffect(()=>{
-    setpage(1)
+    if(query){setpage(1)
     setData([])
-    fetchData()
+    fetchData()}
+    
   },[location?.search])
 
   const HandleScroll = () => {
@@ -36,7 +37,8 @@ const SearchPage = () => {
   }
 
   useEffect(() => {
-      fetchData()
+      if(query)
+      {fetchData()}
     }, [page])
 
     useEffect(() => {
@@ -52,6 +54,7 @@ const SearchPage = () => {
         type='text'
         placeholder='Search here...' 
         onChange={(e)=>navigate(`/search?q=${e.target.value}`)}
+        value={query.split("%20").join(" ")}
         className='search_barr'
         />
       </div>

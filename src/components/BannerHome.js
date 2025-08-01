@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { FaAngleRight,FaStar, FaAngleLeft } from "react-icons/fa6";
 import './BannerHome.css'; 
+import { Link } from 'react-router-dom';
 
 const BannerHome = () => {
     const bannerData = useSelector(state => state.AOSmoviesData.bannerData);
@@ -29,7 +30,7 @@ const BannerHome = () => {
             }
         }, 4000);
         return () => clearInterval(interval);
-    }, [currentImage, bannerData]);
+    }, [currentImage, bannerData,currentImage]);
 
     return (
         <section className="banner-container">
@@ -76,9 +77,9 @@ const BannerHome = () => {
                                 <p>Views: {Number(data.popularity).toFixed(0)}</p>
                             </div>
                             
-                            <button className="play-button">
+                            <Link to={'/'+data?.media_type+"/"+data?.id} className="play-button">
                                 Play Now
-                            </button>
+                            </Link>
                         </div>
                     </div>
                 ))}
