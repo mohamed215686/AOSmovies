@@ -1,0 +1,122 @@
+/* Login Form Styles */
+.login-container {
+  min-height: 100vh;
+  background-color: #121212;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.login-form {
+  background-color: #1e1e1e;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.login-form h2 {
+  color: #d5c28f;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.login-form label {
+  display: block;
+  color: #d5c28f;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #333;
+  border-radius: 4px;
+  background-color: #2a2a2a;
+  color: white;
+  font-size: 1rem;
+}
+
+.login-form input:focus {
+  outline: none;
+  border-color: #b99a45;
+  box-shadow: 0 0 0 2px rgba(185, 154, 69, 0.2);
+}
+
+.login-form button {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 0.5rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-primary {
+  background-color: #b99a45;
+  color: #121212;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: #c9aa55;
+}
+
+.btn-secondary {
+  background-color: #2a2a2a;
+  color: #d5c28f;
+  border: 1px solid #b99a45;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background-color: #333;
+}
+
+.login-form button:disabled {
+  background-color: #5a5a5a;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.error-message {
+  color: #ff6b6b;
+  background-color: rgba(255, 0, 0, 0.1);
+  padding: 0.5rem;
+  border-radius: 4px;
+  text-align: center;
+  margin: 0.5rem 0;
+}
+
+.signup-link {
+  color: #d5c28f;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.signup-link a {
+  color: #b99a45;
+  margin-left: 0.5rem;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .login-form {
+    padding: 1.5rem;
+  }
+}

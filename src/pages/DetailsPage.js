@@ -4,13 +4,15 @@ import { useParams } from 'react-router-dom'
 import useFetchDetails from '../hooks/useFetchDetails'
 import { useSelector } from 'react-redux'
 import './DetailsPage.css'
-import { FaStar , FaEye } from 'react-icons/fa'
+import { FaStar , FaEye ,FaPlay} from 'react-icons/fa'
 import { BiTimeFive } from "react-icons/bi"
 import moment from 'moment'
 import Divider from '../components/Divider'
 import useFetch from '../hooks/useFetch'
 import HorizontaleScrollCard  from '../components/HorizontaleScrollCard'
 import VideoPlay from '../components/VideoPlay'
+import { AddToHistory, AddToLiked, AddToWatchLater } from '../firebase/auth'
+import { BiTimer ,BiSolidLike} from "react-icons/bi";
 const DetailsPage = () => {
   const params = useParams()
   const imageURL = useSelector(state => state.AOSmoviesData.imageURL)
@@ -22,11 +24,19 @@ const DetailsPage = () => {
   const [playvideoId,setplayVideoId]=useState("")
   const writer = castData?.crew?.filter(el => el?.job === "Writer")?.map(el => el?.name)?.join(", ")
   
+  
   const handlePlayvideo=(data)=>{
     setplayVideoId(data?.id)
+    AddToHistory(data)
     setplayVideo(true)
   }
-  
+  const Liked = (data) => {
+    console.log("Liked data:", data);
+    AddToLiked(data)}
+
+  const handleWatchLater = () => {
+    AddToWatchLater(data);
+  };
   
   const formatRevenue = (value) => {
   if (!value) return 'N/A';
@@ -37,7 +47,7 @@ const DetailsPage = () => {
   return `$${num.toLocaleString()}`;
 };
   return (
-    <div>
+    <div className='detailsPage-container'>
       <div className='show_image'>
         <div className='imageA'>
           <img
@@ -57,7 +67,18 @@ const DetailsPage = () => {
             className='poster'
             alt="Poster"
           />
-          <button onClick={()=>handlePlayvideo(data)} className='PlayBtn'>Play now</button>
+          <div className='button-container'>
+            <button onClick={() => handlePlayvideo(data)} className='PlayBtn play'>
+              Play now <FaPlay />
+            </button>
+            <button onClick={() => Liked(data)} className='PlayBtn liked'>
+              Liked <BiSolidLike />
+            </button>
+            <button onClick={() => handleWatchLater(data)} className='PlayBtn watch-later'>
+              Watch Later <BiTimer />
+            </button>
+          </div>
+          
         </div>
         <div>
           <h2 className='titleN'>{data?.title || data?.name}</h2>

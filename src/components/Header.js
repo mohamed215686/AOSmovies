@@ -3,8 +3,9 @@ import './Header.css'
 import {Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { FaUserAlt,FaSearch } from "react-icons/fa";
 import { navigation } from '../contants/navigation';
-
+import { useAuth } from '../contexts/authContext';
 const Header = () => {
+  const {userLoggedIn} = useAuth();
   const location=useLocation()
   const removespace=location?.search?.slice(3)?.split("%20")?.join(" ")
   const [SearchInput,SetSearchInput]=useState(removespace)
@@ -59,9 +60,10 @@ const Header = () => {
       </button>
     </form>
 
-    <div className="user_icon">
+    <Link className="user_icon"
+      to={userLoggedIn ? 'Profile' : 'Login'}>
       <FaUserAlt />
-    </div>
+    </Link>
   </div>
 </div>
 </header>

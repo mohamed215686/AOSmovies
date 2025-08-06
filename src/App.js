@@ -7,6 +7,7 @@ import axios from 'axios';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { setBannerData, setImageURL } from './store/AOSmoviesSlice';
+import { AuthProvider } from './contexts/authContext';
 
 function App() {
   const dispatch = useDispatch();
@@ -35,6 +36,7 @@ function App() {
    }, []);
 
   return (
+    <AuthProvider>
     <div className="app-container">
       <Header className="app-header" />
       <div className="content-container ">
@@ -42,7 +44,7 @@ function App() {
       </div>
       <Footer className="app-footer" />
       <MobileNavigation />
-    </div>
+    </div></AuthProvider>
   );
 }
 

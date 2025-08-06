@@ -18,11 +18,17 @@
   background: linear-gradient(to bottom, transparent, #1a1a1a); /* Match page BG */
   pointer-events: none; /* Allows clicks through overlay */
 }
-
+@media screen and (max-width: 1023px) {
+  .detailsPage-container {
+  margin-top: 120px; /* Adjust this value as needed */
+  }
+  
+}
 @media (min-width: 1024px) {
   .show_image {
     display: block;
   }
+  
 }
 
 .imageA {
@@ -149,7 +155,7 @@
     font-size: 1rem;
     font-weight: 700;
   }
-
+  
   .info-item span:first-child {
     white-space: nowrap;
     overflow: hidden;
@@ -159,18 +165,65 @@
 .info{
   color: #ffffff;
 }
-.PlayBtn{
-  background: white;
-    padding: 0.5rem 1rem;
-    color: black;
-    font-weight: 700;
-    border-radius: 0.25rem;
-    margin-top: 1rem;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    width: 240px;
+.button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem; /* Increased gap for better separation */
+  margin-top: 1rem;
 }
-.PlayBtn:hover{
-  background: linear-gradient(to left, #b99a45,#d5c28f);
-    transform: scale(1.1);
+
+/* Base button styles */
+.PlayBtn {
+  padding: 0.6rem 1.2rem;
+  font-weight: 700;
+  border-radius: 0.3rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  width: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* Play Now button */
+.PlayBtn.play {
+  background: white;
+  color: #000;
+}
+
+.PlayBtn.play:hover {
+  background: linear-gradient(to right, #d5c28f, #b99a45);
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Liked button */
+.PlayBtn.liked {
+  background: #3b82f6; /* Blue */
+  color: white;
+}
+
+.PlayBtn.liked:hover {
+  background: linear-gradient(to right, #3b82f6, #8b5cf6); /* Blue to purple */
+  transform: scale(1.05);
+}
+
+/* Watch Later button */
+.PlayBtn.watch-later {
+  background: #10b981; /* Emerald */
+  color: white;
+}
+
+.PlayBtn.watch-later:hover {
+  background: linear-gradient(to right, #10b981, #06b6d4); /* Emerald to cyan */
+  transform: scale(1.05);
+}
+
+/* Icon styles */
+.PlayBtn svg {
+  font-size: 1.2rem;
 }

@@ -1,0 +1,123 @@
+/* Register Form Styles */
+.register-container {
+  min-height: 100vh;
+  background-color: #121212; /* Dark background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.register-form {
+  background-color: #1e1e1e; /* Slightly lighter dark container */
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 400px;
+}
+
+.register-form h2 {
+  color: #d5c28f; /* Light gold for heading */
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+.register-form label {
+  display: block;
+  color: #d5c28f; /* Light gold for labels */
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.register-form input {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #333;
+  border-radius: 4px;
+  background-color: #2a2a2a; /* Dark input background */
+  color: white;
+  font-size: 1rem;
+}
+
+.register-form input:focus {
+  outline: none;
+  border-color: #b99a45; /* Gold accent */
+  box-shadow: 0 0 0 2px rgba(185, 154, 69, 0.2);
+}
+
+.register-form button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #b99a45; /* Primary gold button */
+  color: #121212; /* Dark text */
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.register-form button:hover:not(:disabled) {
+  background-color: #c9aa55; /* Lighter gold on hover */
+}
+
+.register-form button:disabled {
+  background-color: #5a5a5a;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.error-message {
+  color: #ff6b6b; /* Error red (changed from your inline style) */
+  background-color: rgba(255, 0, 0, 0.1);
+  padding: 0.5rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.register-form .btn-secondary{
+  width: 100%;
+  padding: 0.75rem;
+ background-color: #2a2a2a;
+  color: #d5c28f;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 20px;
+}
+.register-form .btn-secondary:hover:not(:disabled) {
+  background-color: #333;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .register-form {
+    padding: 1.5rem;
+  }
+}
+.verification-message {
+    color: #4CAF50;
+    background-color: #e8f5e9;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.error-message {
+    color: #f44336;
+    background-color: #ffebee;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    text-align: center;
+}

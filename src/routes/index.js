@@ -4,6 +4,15 @@ import Home from "../pages/Home"
 import ExplorePage from "../pages/ExplorePage";
 import DetailsPage from "../pages/DetailsPage";
 import SearchPage from "../pages/SearchPage"
+import Register from "../components/auth/register";
+import Login from "../components/auth/login";
+import ProfilePage from "../pages/ProfilePage";
+import Settings from "../pages/UserPages/Settings";
+import History from "../pages/UserPages/History";
+import Liked from "../pages/UserPages/Liked";
+import WatchLater from "../pages/UserPages/WatchLater";
+import Profile from "../pages/UserPages/Profile";
+import VerifyEmail from "../components/auth/VerifyEmail";
 const router =createBrowserRouter([
     {
         path:"/",
@@ -24,7 +33,44 @@ const router =createBrowserRouter([
             {
                 path: "search",
                 element: <SearchPage/>   
+            },
+            {
+                path: "register",
+                element: <Register />
+            },
+            {
+                path: "login",
+                element: <Login />
+            },
+            {
+                path: "Profile",
+                element: <ProfilePage />
+            },
+            {
+                path: "Profile/profile",
+                element: <Profile/>
+            },
+            {
+                path: "Profile/settings",
+                element: <Settings />
+            },
+            {
+                path: "Profile/history",
+                element: <History />
+            },
+            {
+                path: "Profile/liked",
+                element: <Liked />
+            },
+            {
+                path: "Profile/watchlater",
+                element: <WatchLater />
+            },
+            {
+                path:"/verify-email" ,
+                element:<VerifyEmail />
             }
+
         ]
     }
 ])
