@@ -31,22 +31,19 @@ const Register = () => {
   setError('');
   
   try {
-    // 1. Create user account
     const userCredential = await doCreateUserWithEmailAndPassword(email, password);
+    console.log('User created:', userCredential.user.uid);
     
-    // 2. Send verification email
     await dosendEmailVerification(userCredential.user);
+    console.log('Verification email sent');
     
-    // 3. Update state and navigate
     setVerificationSent(true);
-    navigate('/verify-email', { 
-      state: { email: userCredential.user.email } 
-    });
-    
+    navigate('/verify-email', { state: { email: userCredential.user.email } });
   } catch (err) {
+    console.error('Full error:', err);
     setError(err.message);
-    console.error('Registration failed:', err.message);
-  } finally {
+  } 
+   finally {
     setLoading(false);
   }
 };

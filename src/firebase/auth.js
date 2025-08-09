@@ -8,24 +8,32 @@ import { sendPasswordResetEmail } from "firebase/auth";
 import { addDoc, collection,updateDoc,getDoc ,doc, setDoc,deleteDoc, Firestore } from "firebase/firestore";
 import {db} from "./firebase"; 
 import { updatePassword, deleteUser } from 'firebase/auth';
-export const doCreateUserWithEmailAndPassword =async (email, password) => {
-    
-    const user = await createUserWithEmailAndPassword(auth,email, password);
-    
-    await addDoc(collection(db, "users"), {
-        uid: user.uid,
-        email: user.email,
-        displayName: '',
-        phoneNumber: '',
-        photoURL: '',
-        WatcheLater: [],
-        WatchHistory: [],
-        Liked: [],
-    }); 
-    const userRef = doc(db, "users", user.uid);
-    
-}
+export const doCreateUserWithEmailAndPassword = async (email, password) => {
+  try {
+    // 1. Create auth user
+    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+    const user = userCredential.user;
 
+    // 2. Create Firestore document with UID as document ID
+    await setDoc(doc(db, "users", user.uid), {
+      uid: user.uid,
+      email: user.email,
+      displayName: user.displayName || '',
+      phoneNumber: user.phoneNumber || '',
+      photoURL: user.photoURL || '',
+      WatcheLater: [],
+      WatchHistory: [],
+      Liked: [],
+      createdAt: new Date()  // Good practice to add timestamps
+    });
+
+    return userCredential;
+    
+  } catch (error) {
+    console.error("Error in user creation:", error);
+    throw error;
+  }
+};
 export function doSignInWithEmailAndPassword(email, password) {
   return signInWithEmailAndPassword(auth, email, password);
 }
@@ -52,13 +60,14 @@ export const doPasswordUpdate = async (newPassword) => {
 export const dosendEmailVerification = async (user) => {
   try {
     const actionCodeSettings = {
-      url: `${window.location.origin}/profile`, // Where to redirect after verification
+      url: `${window.location.origin}/complete-verification`,
       handleCodeInApp: true
     };
     await sendEmailVerification(user, actionCodeSettings);
+    console.log("Verification email sent successfully");
     return true;
   } catch (error) {
-    console.error("Error sending verification email:", error);
+    console.error("Error sending verification:", error);
     throw error;
   }
 };

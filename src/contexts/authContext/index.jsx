@@ -32,8 +32,11 @@ export function AuthProvider({ children }) {
         setLoading(false);
         
     }
+    const reloadUser = async () => {
+    await auth.currentUser?.reload();
+  };
     return (
-        <AuthContext.Provider value={{ currentUser,userLoggedIn, loading }}>
+        <AuthContext.Provider value={{ currentUser,userLoggedIn, loading , reloadUser }}>
         {!loading && children}
         </AuthContext.Provider>
     );

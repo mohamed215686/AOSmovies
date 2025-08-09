@@ -52,11 +52,16 @@ const handleLogout = async () => {
                             <img src={currentUser.photoURL} alt="Profile" />
                         ) : (
                             <div className="avatar-placeholder">
-                                {currentUser?.email?.charAt(0).toUpperCase()}
+                            {currentUser?.displayName 
+                                ? currentUser.displayName.charAt(0).toUpperCase() 
+                                : currentUser?.email?.charAt(0).toUpperCase()}
                             </div>
                         )}
                     </div>
-                    <p className="sidebar-username">{currentUser?.email?.split('@')[0]}</p>
+                    <p className="sidebar-username">{currentUser?.displayName?.trim() || 
+                    currentUser?.email?.split('@')[0] || 
+                    'User'}
+                    </p>
                 </div>
                 
                 <nav className="navigation-links">

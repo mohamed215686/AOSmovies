@@ -13,6 +13,7 @@ import Liked from "../pages/UserPages/Liked";
 import WatchLater from "../pages/UserPages/WatchLater";
 import Profile from "../pages/UserPages/Profile";
 import VerifyEmail from "../components/auth/VerifyEmail";
+import CompleteVerification from "../components/auth/CompleteVerification";
 const router =createBrowserRouter([
     {
         path:"/",
@@ -69,6 +70,9 @@ const router =createBrowserRouter([
             {
                 path:"/verify-email" ,
                 element:<VerifyEmail />
+            },{
+                path: "complete-verification",
+                element: <CompleteVerification />
             }
 
         ]

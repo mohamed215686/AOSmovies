@@ -3,33 +3,36 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #f5f5f5;
+    background-color: #1a1a1a; /* Dark background */
     padding: 20px;
 }
 
 .verify-email-card {
-    background: white;
+    background: #2d2d2d; /* Dark card background */
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
     max-width: 500px;
     width: 100%;
     text-align: center;
+    border: 1px solid #3d3d3d; /* Subtle border */
 }
 
 .verify-email-card h2 {
     margin-bottom: 1.5rem;
-    color: #333;
+    color: #d5c28f; /* Light gold for headings */
 }
 
 .verification-message {
     margin-bottom: 2rem;
     text-align: left;
+    background-color: #3d3d3d; /* Slightly lighter background for message */
+    color: #e0e0e0; /* Light text */
 }
 
 .user-email {
     font-weight: bold;
-    color: #4a6bff;
+    color: #b99a45; /* Darker gold accent */
     margin: 0.5rem 0;
 }
 
@@ -50,43 +53,46 @@
 }
 
 .resend-button {
-    background-color: #4a6bff;
-    color: white;
+    background-color: #b99a45; /* Dark gold */
+    color: #121212; /* Dark text */
 }
 
 .resend-button:hover:not(:disabled) {
-    background-color: #3a5bef;
+    background-color: #d5c28f; /* Light gold on hover */
+    color: #121212;
 }
 
 .resend-button:disabled {
-    background-color: #cccccc;
+    background-color: #4d4d4d;
+    color: #7a7a7a;
     cursor: not-allowed;
 }
 
 .signout-button {
     background-color: transparent;
-    color: #666;
-    border: 1px solid #ddd;
+    color: #d5c28f; /* Light gold */
+    border: 1px solid #b99a45; /* Dark gold border */
 }
 
 .signout-button:hover {
-    background-color: #f5f5f5;
+    background-color: rgba(181, 154, 69, 0.1); /* Semi-transparent gold */
 }
 
 .troubleshooting {
     margin-top: 2rem;
     text-align: left;
-    color: #666;
+    color: #121212; /* Lighter gray for secondary text */
 }
 
 .troubleshooting h4 {
     margin-bottom: 0.5rem;
-    color: #444;
+    color: #d5c28f; /* Light gold for subheadings */
 }
 
 .troubleshooting ul {
     padding-left: 1.5rem;
     margin-top: 0.5rem;
+    color: #b0b0b0;
 }
 
 .troubleshooting li {
@@ -94,17 +100,19 @@
 }
 
 .error-message {
-    color: #ff4d4d;
+    color: #ff6b6b;
     margin: 1rem 0;
     padding: 0.5rem;
-    background-color: #ffebee;
+    background-color: rgba(255, 107, 107, 0.1);
     border-radius: 4px;
+    border: 1px solid rgba(255, 107, 107, 0.3);
 }
 
 .success-message {
-    color: #10b981;
+    color: #6bff6b;
     margin: 1rem 0;
     padding: 0.5rem;
-    background-color: #e8f5e9;
+    background-color: rgba(107, 255, 107, 0.1);
     border-radius: 4px;
+    border: 1px solid rgba(107, 255, 107, 0.3);
 }

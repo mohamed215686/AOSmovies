@@ -1,40 +1,38 @@
 import React, { useEffect, useState } from 'react';
 import { useAuth } from '../../contexts/authContext';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { dosendEmailVerification, doSendEmailVerification } from '../../firebase/auth';
+import { auth } from '../../firebase/firebase';
+import { dosendEmailVerification } from '../../firebase/auth';
 import './VerifyEmail.css';
 
 const VerifyEmail = () => {
-    const { currentUser, reloadUser } = useAuth();
+    const { currentUser } = useAuth();
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
     const [countdown, setCountdown] = useState(30);
     const navigate = useNavigate();
-
     const location = useLocation();
-  
-  const email = location.state?.email || currentUser?.email;
 
-  useEffect(() => {
+    const email = location.state?.email || currentUser?.email;
+
     const checkVerification = async () => {
-      if (currentUser) {
-        await reloadUser();
-        if (currentUser.emailVerified) {
-          navigate('/profile');
+        if (auth.currentUser) {
+            await auth.currentUser.reload();
+            if (auth.currentUser.emailVerified) {
+                navigate('/profile');
+            }
         }
-      }
     };
-    
-    const interval = setInterval(checkVerification, 5000); // Check every 5 seconds
-    return () => clearInterval(interval);
-  }, [currentUser, navigate, reloadUser]);
-    // Check if user is verified
+
     useEffect(() => {
-        if (currentUser?.emailVerified) {
-            navigate('/profile');
-        }
-    }, [currentUser, navigate]);
+        // Initial check
+        checkVerification();
+        
+        // Set up interval for periodic checks
+        const interval = setInterval(checkVerification, 5000);
+        return () => clearInterval(interval);
+    }, [navigate]);
 
     // Countdown timer for resend button
     useEffect(() => {
@@ -54,15 +52,13 @@ const VerifyEmail = () => {
         try {
             await dosendEmailVerification(currentUser);
             setSuccess('Verification email resent successfully!');
-            setCountdown(30); // Reset countdown
+            setCountdown(30);
         } catch (error) {
             setError(error.message);
         } finally {
             setLoading(false);
         }
     };
-
-    
 
     return (
         <div className="verify-email-container">
@@ -87,8 +83,6 @@ const VerifyEmail = () => {
                         {loading ? 'Sending...' : 
                          countdown > 0 ? `Resend in ${countdown}s` : 'Resend Verification Email'}
                     </button>
-
-                   
                 </div>
 
                 <div className="troubleshooting">
